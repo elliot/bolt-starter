@@ -35,6 +35,22 @@ export default function Page() {
           </Breadcrumb>
         </div>
       </header>
+      <div
+        id="actions-menu"
+        className="flex place-items-center justify-between border-b border-b-gray-200 px-6 py-3"
+      >
+        {/* TODO: Add actions menu */}
+        <div id="actions-left" className="">
+          {/* TODO: Add actions left */}
+        </div>
+        <div id="actions-right" className="flex items-center gap-2">
+          {/* TODO: Add actions right */}
+        </div>
+      </div>
+      <div id="content" className="">
+        {/* TODO: Add content */}
+      </div>
+
       <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
         <div className="grid auto-rows-min gap-4 md:grid-cols-3">
           <div className="aspect-video rounded-xl bg-muted/50" />
