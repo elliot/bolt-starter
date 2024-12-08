@@ -2,8 +2,10 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 export const metadata: Metadata = {
   title: {
@@ -32,8 +34,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <TailwindIndicator />
+          <TooltipProvider>
+            {children}
+            <Toaster />
+            <TailwindIndicator />
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -27,6 +27,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
+import { ThemeSwitcher } from "@/components/theme-switcher"
 
 const data = {
   user: {
@@ -177,6 +178,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
+      <SidebarFooter className="p-2">
+        <ThemeSwitcher />
+      </SidebarFooter>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>

@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -6,8 +8,10 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
+import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
+import { toast } from "sonner"
 
 export default function Page() {
   return (
@@ -37,7 +41,30 @@ export default function Page() {
           <div className="aspect-video rounded-xl bg-muted/50" />
           <div className="aspect-video rounded-xl bg-muted/50" />
         </div>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+        <div className="flex min-h-[100vh] flex-1 items-center justify-center rounded-xl bg-muted/50 md:min-h-min">
+          <Button
+            variant="outline"
+            onClick={() => {
+              toast("Your request was completed!", {
+                description: "It was a long journey, but we made it!",
+                action: {
+                  label: "Undo",
+                  onClick: () => console.log("Undo"),
+                },
+              })
+            }}
+          >
+            Show Toast
+          </Button>
+          <Button
+            variant="ghost"
+            onClick={() => {
+              toast("Event has been created")
+            }}
+          >
+            Show Toast
+          </Button>
+        </div>
       </div>
     </>
   )
